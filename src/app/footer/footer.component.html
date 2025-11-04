@@ -10,7 +10,7 @@
   <div class="container">
     <div class="footer-content">
       <div class="footer-brand">
-        <h3 class="brand-name gradient-text">AI Vision</h3>
+        <h3 class="brand-name gradient-text" [routerLink]="['/']">AI Vision</h3>
         <p class="brand-tagline">
           Empowering the next generation of AI innovators through world-class education 
           and hands-on experience.
@@ -19,7 +19,9 @@
           <a *ngFor="let social of socialLinks" 
              [href]="social.link" 
              class="social-link"
-             [title]="social.name">
+             [title]="social.name"
+             target="_blank"
+             rel="noopener noreferrer">
             {{ social.icon }}
           </a>
         </div>
@@ -30,7 +32,7 @@
           <h4 class="column-title">Courses</h4>
           <ul>
             <li *ngFor="let link of footerLinks.courses">
-              <a [href]="link.link">{{ link.name }}</a>
+              <a [routerLink]="[link.link]">{{ link.name }}</a>
             </li>
           </ul>
         </div>
@@ -39,7 +41,7 @@
           <h4 class="column-title">Company</h4>
           <ul>
             <li *ngFor="let link of footerLinks.company">
-              <a [href]="link.link">{{ link.name }}</a>
+              <a [routerLink]="[link.link]">{{ link.name }}</a>
             </li>
           </ul>
         </div>
@@ -48,7 +50,7 @@
           <h4 class="column-title">Support</h4>
           <ul>
             <li *ngFor="let link of footerLinks.support">
-              <a [href]="link.link">{{ link.name }}</a>
+              <a [routerLink]="[link.link]">{{ link.name }}</a>
             </li>
           </ul>
         </div>

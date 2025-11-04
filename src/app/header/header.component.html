@@ -1,24 +1,24 @@
 <header [class.scrolled]="isScrolled">
   <div class="container">
     <nav class="navbar">
-      <div class="logo">
+      <div class="logo" [routerLink]="['/']">
         <span class="gradient-text">AI Vision</span>
       </div>
-
+      
       <ul class="nav-links" [class.active]="isMobileMenuOpen">
-        <li><a (click)="scrollToSection('hero')">Home</a></li>
-        <li><a (click)="scrollToSection('features')">Features</a></li>
-        <li><a (click)="scrollToSection('curriculum')">Curriculum</a></li>
-        <li><a (click)="scrollToSection('team')">Team</a></li>
-        <li><a (click)="scrollToSection('pricing')">Pricing</a></li>
-        <li><a (click)="scrollToSection('contact')">Contact</a></li>
+        <li><a [routerLink]="['/']" (click)="closeMobileMenu()">Home</a></li>
+        <li><a (click)="scrollToSection('features'); closeMobileMenu()">Features</a></li>
+        <li><a [routerLink]="['/curriculum']" (click)="closeMobileMenu()">Curriculum</a></li>
+        <li><a [routerLink]="['/team']" (click)="closeMobileMenu()">Team</a></li>
+        <li><a [routerLink]="['/pricing']" (click)="closeMobileMenu()">Pricing</a></li>
+        <li><a [routerLink]="['/contact']" (click)="closeMobileMenu()">Contact</a></li>
       </ul>
-
+      
       <div class="nav-actions">
-        <button class="btn btn-secondary">Login</button>
-        <button class="btn btn-primary">Get Started</button>
+        <button class="btn btn-secondary" [routerLink]="['/contact']">Login</button>
+        <button class="btn btn-primary" [routerLink]="['/contact']">Get Started</button>
       </div>
-
+      
       <div class="mobile-menu-toggle" (click)="toggleMobileMenu()">
         <span [class.active]="isMobileMenuOpen"></span>
         <span [class.active]="isMobileMenuOpen"></span>

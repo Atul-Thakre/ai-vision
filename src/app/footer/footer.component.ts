@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
@@ -13,22 +14,22 @@ export class FooterComponent {
   
   footerLinks = {
     courses: [
-      { name: 'Machine Learning', link: '#' },
-      { name: 'Deep Learning', link: '#' },
-      { name: 'NLP', link: '#' },
-      { name: 'Computer Vision', link: '#' }
+      { name: 'Machine Learning', link: '/curriculum' },
+      { name: 'Deep Learning', link: '/curriculum' },
+      { name: 'NLP', link: '/curriculum' },
+      { name: 'Computer Vision', link: '/curriculum' }
     ],
     company: [
-      { name: 'About Us', link: '#' },
-      { name: 'Careers', link: '#' },
-      { name: 'Blog', link: '#' },
-      { name: 'Press', link: '#' }
+      { name: 'About Us', link: '/team' },
+      { name: 'Careers', link: '/contact' },
+      { name: 'Blog', link: '/' },
+      { name: 'Press', link: '/contact' }
     ],
     support: [
-      { name: 'Help Center', link: '#' },
-      { name: 'Contact Us', link: '#' },
-      { name: 'Privacy Policy', link: '#' },
-      { name: 'Terms of Service', link: '#' }
+      { name: 'Help Center', link: '/contact' },
+      { name: 'Contact Us', link: '/contact' },
+      { name: 'Privacy Policy', link: '/' },
+      { name: 'Terms of Service', link: '/' }
     ]
   };
   
