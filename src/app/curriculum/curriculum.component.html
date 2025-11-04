@@ -1,0 +1,74 @@
+<section class="curriculum" id="curriculum">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge fade-in-up">
+        <span>📚 Course Structure</span>
+      </div>
+      <h2 class="section-title fade-in-up">
+        Complete
+        <span class="gradient-text"> 12-Week Curriculum</span>
+      </h2>
+      <p class="section-description fade-in-up">
+        A comprehensive, project-based learning path designed to take you from AI fundamentals 
+        to advanced deployment in just 12 weeks.
+      </p>
+    </div>
+    
+    <div class="curriculum-timeline">
+      <div class="timeline-line"></div>
+      
+      <div class="module-card" 
+           *ngFor="let module of modules; let i = index"
+           [class.expanded]="expandedModule === i"
+           (click)="toggleModule(i)">
+        <div class="module-header">
+          <div class="module-icon" [style.background]="module.color">
+            {{ module.icon }}
+          </div>
+          <div class="module-info">
+            <div class="module-meta">
+              <span class="module-week">{{ module.week }}</span>
+              <span class="module-duration">{{ module.duration }}</span>
+              <span class="module-difficulty" [style.color]="module.color">{{ module.difficulty }}</span>
+            </div>
+            <h3 class="module-title">{{ module.title }}</h3>
+          </div>
+          <div class="module-toggle">
+            <span class="toggle-icon">{{ expandedModule === i ? '−' : '+' }}</span>
+          </div>
+        </div>
+        
+        <div class="module-content" [class.show]="expandedModule === i">
+          <div class="content-section">
+            <h4 class="content-title">📖 What You'll Learn</h4>
+            <ul class="module-topics">
+              <li *ngFor="let topic of module.topics">
+                <span class="topic-check">✓</span>
+                {{ topic }}
+              </li>
+            </ul>
+          </div>
+          
+          <div class="content-section">
+            <h4 class="content-title">🎯 Hands-on Projects</h4>
+            <ul class="module-projects">
+              <li *ngFor="let project of module.projects">
+                <span class="project-icon">🚀</span>
+                {{ project }}
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="module-number">{{ i + 1 }}</div>
+      </div>
+    </div>
+    
+    <div class="curriculum-cta fade-in-up">
+      <button class="btn btn-primary btn-large">
+        Download Full Syllabus
+        <span class="btn-icon">↓</span>
+      </button>
+    </div>
+  </div>
+</section>
