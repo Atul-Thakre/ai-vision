@@ -1,0 +1,60 @@
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge fade-in-up">
+        <span>💬 Student Success Stories</span>
+      </div>
+      <h2 class="section-title fade-in-up">
+        What Our
+        <span class="gradient-text"> Students Say</span>
+      </h2>
+      <p class="section-description fade-in-up">
+        Join thousands of successful students who have transformed their careers 
+        through our AI courses.
+      </p>
+    </div>
+    
+    <div class="testimonials-slider">
+      <div class="testimonial-track" [style.transform]="'translateX(-' + (currentIndex * 100) + '%)'">
+        <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+          <div class="quote-icon">"</div>
+          
+          <div class="testimonial-content">
+            <div class="rating">
+              <span class="star" *ngFor="let star of [1,2,3,4,5]">★</span>
+            </div>
+            
+            <p class="testimonial-text">{{ testimonial.text }}</p>
+            
+            <div class="testimonial-author">
+              <img [src]="testimonial.image" [alt]="testimonial.name" class="author-image">
+              <div class="author-info">
+                <h4 class="author-name">{{ testimonial.name }}</h4>
+                <p class="author-role">{{ testimonial.role }}</p>
+                <div class="company-badge">
+                  <span>{{ testimonial.company }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <button class="slider-btn prev-btn" (click)="prevSlide()">
+        <span>←</span>
+      </button>
+      <button class="slider-btn next-btn" (click)="nextSlide()">
+        <span>→</span>
+      </button>
+      
+      <div class="slider-dots">
+        <button 
+          *ngFor="let testimonial of testimonials; let i = index"
+          class="dot"
+          [class.active]="i === currentIndex"
+          (click)="goToSlide(i)">
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

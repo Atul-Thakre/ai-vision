@@ -1,0 +1,67 @@
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge fade-in-up">
+        <span>💰 Pricing Plans</span>
+      </div>
+      <h2 class="section-title fade-in-up">
+        Choose Your
+        <span class="gradient-text"> Learning Path</span>
+      </h2>
+      <p class="section-description fade-in-up">
+        Flexible pricing options designed to fit your learning goals and budget. 
+        All plans include lifetime access to course updates.
+      </p>
+    </div>
+    
+    <div class="pricing-grid">
+      <div class="pricing-card" 
+           *ngFor="let plan of plans"
+           [class.popular]="plan.popular">
+        <div class="popular-badge" *ngIf="plan.popular">
+          <span>⭐ Most Popular</span>
+        </div>
+        
+        <div class="plan-header">
+          <div class="plan-icon" [style.background]="'linear-gradient(135deg, ' + plan.color + ' 0%, ' + plan.color + '80 100%)'">
+            <span *ngIf="plan.name === 'Basic'">🎯</span>
+            <span *ngIf="plan.name === 'Pro'">🚀</span>
+            <span *ngIf="plan.name === 'Enterprise'">👑</span>
+          </div>
+          <h3 class="plan-name">{{ plan.name }}</h3>
+          <p class="plan-description">{{ plan.description }}</p>
+        </div>
+        
+        <div class="plan-price">
+          <span class="currency">$</span>
+          <span class="amount">{{ plan.price }}</span>
+          <span class="period">/{{ plan.period }}</span>
+        </div>
+        
+        <ul class="plan-features">
+          <li *ngFor="let feature of plan.features">
+            <span class="feature-icon">✓</span>
+            {{ feature }}
+          </li>
+        </ul>
+        
+        <button class="btn" [class.btn-primary]="plan.popular" [class.btn-secondary]="!plan.popular">
+          Get Started
+          <span class="btn-icon">→</span>
+        </button>
+        
+        <div class="plan-glow" [style.background]="plan.color"></div>
+      </div>
+    </div>
+    
+    <div class="pricing-footer fade-in-up">
+      <p>All plans include a 7-day money-back guarantee. No questions asked.</p>
+      <a href="#contact" class="contact-link">Need a custom plan? Contact us →</a>
+    </div>
+  </div>
+  
+  <div class="pricing-background">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+  </div>
+</section>

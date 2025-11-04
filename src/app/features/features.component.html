@@ -1,14 +1,44 @@
 <section class="features" id="features">
-  <div class="feature-box" style="animation-delay:.2s;">
-    <div class="feature-title">AI-Powered Analytics</div>
-    <div class="feature-desc">Extract actionable insights from your data with cutting-edge analytics driven by ethical machine learning.</div>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge fade-in-up">
+        <span>✨ Why Choose Us</span>
+      </div>
+      <h2 class="section-title fade-in-up">
+        Everything You Need to Master
+        <span class="gradient-text"> Artificial Intelligence</span>
+      </h2>
+      <p class="section-description fade-in-up">
+        Our comprehensive AI course is designed to take you from beginner to expert 
+        with hands-on projects, expert mentorship, and industry-recognized certification.
+      </p>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card" *ngFor="let feature of features; let i = index">
+        <div class="feature-card-inner">
+          <div class="feature-card-front">
+            <div class="feature-icon" [style.background]="'linear-gradient(135deg, ' + feature.color + ' 0%, ' + feature.color + '80 100%)'">
+              {{ feature.icon }}
+            </div>
+            <h3 class="feature-title">{{ feature.title }}</h3>
+            <p class="feature-description">{{ feature.description }}</p>
+            <div class="feature-arrow">→</div>
+          </div>
+        </div>
+        <div class="feature-glow" [style.background]="feature.color"></div>
+      </div>
+    </div>
+    
+    <div class="features-cta fade-in-up">
+      <button class="btn btn-primary btn-large">
+        Explore Full Curriculum
+        <span class="btn-icon">→</span>
+      </button>
+    </div>
   </div>
-  <div class="feature-box" style="animation-delay:.5s;">
-    <div class="feature-title">Automation, Redefined</div>
-    <div class="feature-desc">Boost productivity with smart workflows—streamlined, automated, and always learning.</div>
-  </div>
-  <div class="feature-box" style="animation-delay:.8s;">
-    <div class="feature-title">Human-Like Interactions</div>
-    <div class="feature-desc">Deploy advanced chatbots and voice solutions for truly natural customer experiences.</div>
+  
+  <div class="features-background">
+    <div class="grid-pattern"></div>
   </div>
 </section>

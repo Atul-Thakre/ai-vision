@@ -1,7 +1,86 @@
-<section class="hero">
-  <div class="hero-title">Shaping Smarter Bussiness With AI Innovation</div>
-  <div class="hero-desc">
-    Transform your bussiness with cutting-edge AI solutions that drive growth,effeciency, and innovation.
+<section class="hero" id="hero">
+  <canvas id="particles" class="particles"></canvas>
+
+  <div class="hero-background">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
   </div>
-  <a href="#contact" class="cta-btn">Explore Our Services</a>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge fade-in-up">
+        <span class="badge-icon">✨</span>
+        <span>Master AI in 12 Weeks</span>
+      </div>
+
+      <h1 class="hero-title fade-in-up">
+        Transform Your Future with
+        <span class="gradient-text"> Artificial Intelligence</span>
+      </h1>
+
+      <p class="hero-description fade-in-up">
+        Learn cutting-edge AI technologies from industry experts. Build
+        real-world projects, master machine learning, deep learning, and deploy
+        AI solutions that matter.
+      </p>
+
+      <div class="hero-actions fade-in-up">
+        <button class="btn btn-primary btn-large">
+          Start Learning Today
+          <span class="btn-icon">→</span>
+        </button>
+        <button
+          class="btn btn-secondary btn-large"
+          (click)="scrollToFeatures()"
+        >
+          Explore Curriculum
+          <span class="btn-icon">↓</span>
+        </button>
+      </div>
+
+      <div class="hero-stats fade-in-up">
+        <div class="stat" *ngFor="let stat of stats">
+          <div class="stat-value">{{ stat.value }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual fade-in">
+      <div class="visual-container">
+        <div class="floating-card card-1">
+          <div class="card-icon">🤖</div>
+          <div class="card-text">Machine Learning</div>
+        </div>
+        <div class="floating-card card-2">
+          <div class="card-icon">🧠</div>
+          <div class="card-text">Deep Learning</div>
+        </div>
+        <div class="floating-card card-3">
+          <div class="card-icon">💬</div>
+          <div class="card-text">NLP</div>
+        </div>
+        <div class="floating-card card-4">
+          <div class="card-icon">👁️</div>
+          <div class="card-text">Computer Vision</div>
+        </div>
+
+        <div class="central-graphic">
+          <div class="graphic-ring ring-1"></div>
+          <div class="graphic-ring ring-2"></div>
+          <div class="graphic-ring ring-3"></div>
+          <div class="graphic-core">
+            <span class="core-text">AI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="mouse">
+      <div class="wheel"></div>
+    </div>
+  </div>
 </section>

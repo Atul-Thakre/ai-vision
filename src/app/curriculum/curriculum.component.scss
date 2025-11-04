@@ -1,0 +1,231 @@
+.curriculum {
+  padding: 100px 0;
+  position: relative;
+  background: var(--primary-color);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: rgba(108, 92, 231, 0.1);
+  border: 1px solid rgba(108, 92, 231, 0.3);
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.section-description {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.curriculum-timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, 
+    rgba(108, 92, 231, 0.1) 0%, 
+    rgba(108, 92, 231, 0.5) 50%, 
+    rgba(108, 92, 231, 0.1) 100%);
+  transform: translateX(-50%);
+}
+
+.module-card {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(30px);
+  
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  &:hover {
+    border-color: var(--accent-color);
+    transform: translateX(10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+  
+  &.expanded {
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 60px rgba(108, 92, 231, 0.2);
+  }
+}
+
+.module-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.module-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  flex-shrink: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.module-info {
+  flex: 1;
+}
+
+.module-week {
+  font-size: 14px;
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.module-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.module-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(108, 92, 231, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  
+  .toggle-icon {
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--accent-color);
+  }
+  
+  &:hover {
+    background: rgba(108, 92, 231, 0.2);
+    transform: scale(1.1);
+  }
+}
+
+.module-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &.show {
+    max-height: 500px;
+    margin-top: 25px;
+  }
+}
+
+.module-topics {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+    color: var(--text-secondary);
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    .topic-check {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--accent-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: white;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.module-number {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 80px;
+  font-weight: 900;
+  color: rgba(108, 92, 231, 0.05);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.curriculum-cta {
+  text-align: center;
+  margin-top: 60px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 30px;
+  }
+  
+  .module-card {
+    padding: 20px;
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+  
+  .module-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+  
+  .module-title {
+    font-size: 18px;
+  }
+  
+  .module-number {
+    font-size: 60px;
+    right: 20px;
+  }
+}
