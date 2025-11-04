@@ -1,0 +1,61 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem 5% 3rem;
+  background: linear-gradient(120deg, var(--primary) 90%, var(--accent) 100%);
+  animation: fadeInDown 1.2s cubic-bezier(.5, 1.6, .4, 1) both;
+}
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  letter-spacing: 3px;
+  text-align: center;
+  color: var(--secondary);
+  text-shadow: 0 4px 14px var(--primary);
+  animation: textPop 1s .7s backwards;
+}
+.hero-desc {
+  font-size: 1.3rem;
+  max-width: 36rem;
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 1.3s 1.2s backwards;
+}
+.cta-btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: var(--secondary);
+  color: var(--primary);
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px var(--accent);
+  letter-spacing: 2px;
+  margin-top: 1rem;
+  transition: background .3s, color .3s, transform .2s;
+  animation: fadeInUp 1.5s 1.6s backwards;
+  text-decoration: none;
+}
+.cta-btn:hover {
+  background: var(--highlight);
+  color: var(--primary);
+  transform: scale(1.04);
+  box-shadow: 0 4px 18px var(--highlight);
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-50px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+@keyframes textPop {
+  from { opacity: 0; transform: scale(.8) rotate(-2deg);}
+  to { opacity: 1; transform: scale(1) rotate(0);}
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(60px);}
+  to { opacity: 1; transform: translateY(0);}
+}

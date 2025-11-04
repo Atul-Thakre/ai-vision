@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --primary: #111;
+  --secondary: #fff;
+  --accent: #ededed;
+  --highlight: #00ffe7;
+}
+body {
+  margin: 0;
+  background: var(--primary);
+  color: var(--secondary);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  transition: background .5s, color .5s;
+}
+@media (max-width: 900px) {
+  .hero { padding-top: 2.5rem; }
+  .features { grid-template-columns: 1fr; }
+  .team-members { flex-direction: column; gap: 1.5rem;}
+}

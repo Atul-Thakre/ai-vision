@@ -1,0 +1,53 @@
+header {
+  padding: 2rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--accent);
+  background: var(--primary);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition: border-color .5s;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--secondary);
+}
+
+nav a {
+  color: var(--secondary);
+  margin-left: 2rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color .3s;
+}
+
+nav a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--highlight);
+  transition: width .3s;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+}
+
+nav a:hover {
+  color: var(--highlight);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+
+@media (min-width: 786px) {
+  
+}
